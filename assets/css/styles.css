@@ -270,7 +270,7 @@ section { position: relative; padding: 120px 0; }
 .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
 .t-card { border-radius: 22px; overflow: hidden; background: #fff; position: relative; }
 .t-card .ph { position: relative; height: 320px; overflow: hidden; }
-.t-card .ph .after { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.t-card .ph .after { position: absolute; inset: 0; background-size: cover; background-position: top; }
 .t-card .meta { padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; }
 .t-card .meta b { font-family: 'Newsreader', serif; font-size: 18px; letter-spacing: -.02em; }
 .t-card .loss { font-family: 'Newsreader', serif; font-size: 22px; color: var(--ink); font-weight: 600; }
