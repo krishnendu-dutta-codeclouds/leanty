@@ -229,11 +229,7 @@ section { position: relative; padding: 120px 0; }
 .vial { position: absolute; width: 240px;  display: flex; align-items: center; justify-content: center; z-index: 2; }
 .vial.v1 { left: -69px; top: 40px; }
 .vial.v2 { right: 0; top: 60px; width: 200px; }
-/* .vial .label { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 80%; text-align: center; }
-.vial .label b { display: block; font-family: 'Newsreader', serif; font-size: 24px; letter-spacing: -.02em; color: #fff; font-weight: 600; }
-.vial .label small { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #bcbcb6; } */
-/* .vial .cap { position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 60%; height: 30px; background: linear-gradient(180deg, #7a7a78, #2b2b2b); border-radius: 6px 6px 0 0; } */
-/* .vial .liquid { position: absolute; bottom: 0; left: 0; right: 0; height: 65%; background: linear-gradient(180deg, rgba(184,242,74,0), rgba(184,242,74,.7)); border-radius: 0 0 22px 22px; } */
+
 .switch-card { position: absolute; left: 45%; bottom: -10%; transform: translate(-50%,-50%); background: #fff; color: var(--ink); border-radius: 20px; padding: 22px; width: 240px; box-shadow: 0 30px 60px rgba(0,0,0,.4); text-align: center; z-index: 3; }
 .switch-card .big { font-family: 'Newsreader', serif; font-size: 60px; font-weight: 600; letter-spacing: -.04em; line-height: 1; }
 .switch-card .lbl { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
@@ -247,7 +243,7 @@ section { position: relative; padding: 120px 0; }
 .product-card-badge.badge-soft { background: rgba(248,244,237,.92); color: var(--ink); border: 1px solid var(--line); }
 .product-card-media { border-radius: 22px; padding: 18px; min-height: 180px; display: grid; place-items: center; background: linear-gradient(145deg, #f6efe7, #efe6dd); }
 .product-card-media.card-nutrient { background: linear-gradient(145deg, #edf6f1, #e4ede5); }
-.product-card-media img { width: 100%; max-width: 220px; object-fit: contain; filter: drop-shadow(0 18px 30px rgba(14,14,14,.16)); }
+.product-card-media img { width: 100%; max-height: 360px; object-fit: contain; filter: drop-shadow(0 18px 30px rgba(14,14,14,.16)); }
 .product-card-copy { display: grid; gap: 10px; }
 .product-card-topline { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .rating-chip { display: inline-flex; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: 12px; color: var(--ink-2); font-weight: 600; }
@@ -337,6 +333,7 @@ footer { padding: 80px 0 40px; background: var(--bg); border-top: 1px solid var(
 }
 
 @media (max-width: 768px) {
+  .docs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .nav-inner { flex-wrap: wrap; border-radius: 24px; }
   .hero { padding-top: 120px; }
   .hero-grid { gap: 24px; }
@@ -356,7 +353,8 @@ footer { padding: 80px 0 40px; background: var(--bg); border-top: 1px solid var(
   .hero-stat strong { font-size: 24px; }
   .hero-side { height: 360px; }
   .section-head, .inside-head, .how-head { gap: 24px; margin-bottom: 36px; }
-  .stats, .inside-grid, .steps, .results-grid { grid-template-columns: 1fr; }
+  .stats, .inside-grid, .steps { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .product-stage { height: 380px; }
   .switch-card { width: 220px; bottom: 2%; left: 50%; }
   .foot-grid { grid-template-columns: 1fr 1fr; }
@@ -378,6 +376,10 @@ footer { padding: 80px 0 40px; background: var(--bg); border-top: 1px solid var(
 }
 
 @media (max-width: 480px) {
+  .docs-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .docs-grid .doc { min-height: 220px; height: auto; }
+  .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .t-card .meta { flex-direction: column; align-items: flex-start; gap: 6px; }
   :root { --header-offset: 72px; }
   .wrap { padding: 0 18px; }
   .nav { top: 10px; padding: 0 8px; }
@@ -456,8 +458,19 @@ footer { padding: 80px 0 40px; background: var(--bg); border-top: 1px solid var(
   .doc, .doc.d1 { height: 340px; }
   .product-stage { height: 400px; }
   .switch-card { width: 200px; bottom: -4%; }
-  .vial { width: 132px; height: 250px; }
-  .vial.v2 { width: 122px; height: 235px; }
+  .vial { width: 165px; height: auto; }
+  .vial.v2 { width: 165px; height: auto; }
+  .vial.v1 {
+    left: 0;
+    top: 20px;
+}
+.vial.v2 {
+    width: 152px;
+    height: auto;
+    top: 28px;
+    right: 16px;
+}
+
 }
 
 /* ---- GSAP initial states (set on the JS side at runtime too) ---- */
