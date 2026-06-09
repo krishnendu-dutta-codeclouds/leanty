@@ -93,6 +93,15 @@ p  { color: var(--ink-2); line-height: 1.55; font-size: 16px; overflow-wrap: any
 .hero h1 .italic { font-style: italic; font-weight: 500; color: #1a1a1a; }
 .hero-meta { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; }
 .hero-ctas { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.small-gallery { display:flex; align-items:center; margin-top:6px; padding-left:0; }
+.small-gallery img { width:36px; height:36px; object-fit:cover; border-radius:50%; border:1.5px solid #fff; box-shadow:0 12px 30px rgba(0,0,0,.12); margin-left:-18px; position:relative; transition:transform .15s ease; }
+.small-gallery img:first-child { margin-left:0; }
+.small-gallery img:hover { transform:translateY(-4px); z-index:10; }
+
+@media (max-width:480px) {
+  .small-gallery img { width:48px; height:48px; margin-left:-12px; }
+  .small-gallery img:first-child { margin-left:0; }
+}
 .hero-side { position: relative; height: 520px; }
 .hero-card { position: absolute; border-radius: var(--radius); overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.18); }
 .hero-card.c1 { top: 0; right: 0; width: 62%;  background: linear-gradient(135deg, #ffd9c2, #f3a980); }
